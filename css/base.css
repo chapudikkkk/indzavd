@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap");
+
+:root {
+  /* Градієнт та фоновий колір сторінки */
+  --bg-color: #1C2A0B;
+  --bg-gradient: linear-gradient(180deg, rgba(28, 42, 11, 1) 0%, rgba(102, 147, 52, 1) 100%);
+
+  /* Градієнти кнопок */
+  --btn-green-bg: #6B8E23;
+  --btn-green-gradient: linear-gradient(90deg, rgba(40, 58, 4, 1)  0%, rgba(107, 142, 35, 1)50%);
+
+  --btn-red-bg: #800E12;
+  --btn-red-gradient: linear-gradient(90deg, rgba(128, 14, 18, 1) 0%, rgba(189, 106, 109, 1) 50%);
+
+  /* Кольори картки та тексту */
+  --card-bg: rgba(255, 255, 255, 0.3);
+  --text-white: #FFFFFF;
+  --dot-inactive-bg: #FFFFFF;     
+  --dot-active-bg: #32451D;
+  
+
+  /* Шрифти */
+  --font-family-main: "Figtree", sans-serif;
+
+  /* Розміри елементів логін сторінки */
+  --card-width-main: 904.37px;
+  --card-height-main: 363px;
+  --btn-width-main: 346.31px;
+  --btn-height-main: 77.19px;
+
+  /* Розміри елементів сторінки вибір входу */
+--card-width-login: 746px;
+  --card-height-login: 637px;
+  --btn-width-login: 575px;
+  --btn-height-login: 68px;
+
+  /* Радіуси скруглення */
+  --card-radius: 50.93px;
+  --btn-radius-main: 21px;
+  --btn-radius-login: 16px;
+}

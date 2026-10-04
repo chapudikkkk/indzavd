@@ -1,0 +1,93 @@
+@import url("login_page.css");
+
+/* Розміри картки */
+.modal-card-login {
+  max-width: var(--card-width-login);
+  min-height: var(--card-height-login); 
+  padding: 40px 50px;
+}
+
+/* LOG IN  */
+.login-title {
+  color: var(--text-white);
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0.005em; 
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* Підзаголовок  */
+.login-subtitle {
+  color: var(--text-white);
+  font-size: 27.34px; 
+  font-weight: 400;
+  line-height: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Контейнер кнопок входу */
+.login-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+/* Зелена кнопка  */
+.btn-full {
+  width: var(--btn-width-login); 
+  height: var(--btn-height-login); 
+  border-radius: var(--btn-radius-login); 
+  font-size: 25px; 
+  font-weight: 500;
+}
+
+/* Розділювач або */
+.divider {
+  color: var(--text-white);
+  font-size: 24px; 
+  font-weight: 400;
+  line-height: 100%;
+  margin: 5px 0;
+}
+
+
+.btn-social {
+  width: var(--btn-width-login); 
+  height: var(--btn-height-login); 
+  background: #FFFFFF; 
+  color: #000000;
+  border-radius: var(--btn-radius-login); 
+  font-size: 25px; 
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain; 
+}
+
+.btn-social:hover {
+  background: var(--text-white);
+  transform: translateY(-2px);
+}
+
+/* Іконка Дія */
+.diia-icon {
+  background-color: #000000;
+  color: var(--text-white);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: 6px;
+}

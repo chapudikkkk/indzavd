@@ -1,0 +1,137 @@
+@import url("base.css");
+@import url("reset.css");
+
+body {
+  font-family: var(--font-family-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  background-color: var(--bg-color); 
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+}
+
+/* Кнопка Назад */
+.back-btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-icon {
+  width: 64px;
+  height: 64px;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+/* Ефект при наведенні на кнопку "Назад" */
+.back-btn:hover .back-icon {
+  filter: brightness(0.7);
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.modal-card {
+  position: relative;
+  width: 100%;
+  max-width: var(--card-width-main);
+  min-height: var(--card-height-main);
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: var(--card-radius);
+  padding: 60px 40px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Крапки активності */
+.card-dots {
+  position: absolute;
+  top: 24px;
+  right: 40px;
+  display: flex;
+  gap: 8px;
+}
+
+/* Неактивна крапка */
+.card-dots span {
+  width: 19.82px;
+  height: 19.82px;
+  background-color: var(--dot-inactive-bg);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+/* Активна крапка */
+.card-dots span.active {
+  background-color: var(--dot-active-bg);
+}
+
+/* Заголовок першої сторінки */
+.card-title {
+  color: var(--text-white);
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Кнопки на сторінці */
+.buttons-wrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Загальні стилі кнопок */
+.btn {
+  width: var(--btn-width-main);
+  height: var(--btn-height-main);
+  border-radius: var(--btn-radius-main);
+  font-size: 25.03px;
+  font-weight: 600;
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Анімація при наведенні курсора на кнопку */
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* Зелена та червона кнопки з градієнтами з base.css */
+.btn-green {
+  background-color: var(--btn-green-bg);
+  background: var(--btn-green-gradient);
+}
+
+.btn-red {
+  background-color: var(--btn-red-bg);
+  background: var(--btn-red-gradient);
+}
