@@ -31,7 +31,7 @@ body {
   transition: filter 0.2s ease, transform 0.2s ease;
 }
 
-/* Ефект при наведенні на кнопку "Назад" */
+/* Ефект при наведенні на кнопку назад */
 .back-btn:hover .back-icon {
   filter: brightness(0.7);
 }
