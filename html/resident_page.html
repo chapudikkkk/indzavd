@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRAND HOME - Кабінет мешканця</title>
+  <link rel="stylesheet" href="../css/resident_page.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header class="hero">
+    <a href="login_options.html" class="back-btn" aria-label="Назад">
+      <img src="../img/nazad.png" alt="Назад" class="back-icon">
+    </a>
+    <div class="hero-bg"><img src="../img/flowers.png" alt=""></div>
+    <div class="container">
+      <div class="hero-top">
+        <h1 class="hello">Hello,<br><strong>Liana</strong></h1>
+        <a aria-label="Профіль"><img src="../img/user.png" alt="" class="avatar"></a>
+      </div>
+
+      <form class="search" role="search">
+        <input type="search" class="search-input" placeholder="Пошук...">
+        <button type="submit" class="search-btn" aria-label="Шукати">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+        </button>
+      </form>
+
+      <h2 class="section-title title-services">Послуги</h2>
+      <nav class="services">
+        <a href="payment.html" class="service service-yellow">Оплата комун послуг</a>
+        <a href="#" class="service service-pink service-sm">Аналітика споживання</a>
+        <a href="#" class="service service-yellow">Чат-бот підтримки</a>
+        <a href="#" class="service service-pink">Більше послуг</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section>
+      <h2 class="section-title">Новини</h2>
+      <div class="news">
+        <article class="news-card news-pink"><img src="../img/rp1.png" alt=""></article>
+        <article class="news-card news-yellow"><img src="../img/rp2.png" alt=""></article>
+        <article class="news-card news-pink"><img src="../img/rp3.png" alt=""></article>
+        <article class="news-card news-yellow"><img src="../img/rp4.jpg" alt=""></article>
+        <article class="news-card news-pink"><img src="../img/rp5.jpg" alt=""></article>
+        <article class="news-card news-yellow"><img src="../img/rp6.jpg" alt=""></article>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <h2 class="section-title">Статистика споживання комунальних послуг</h2>
+      <div class="stats">
+
+        <div class="stats-left">
+          <!-- 1. Лінійний графік споживання -->
+          <div class="stat stat-line">
+            <h4>Графік споживання</h4>
+            <div class="chart-container-sm">
+              <canvas id="lineConsumptionChart"></canvas>
+            </div>
+          </div>
+
+          <!-- 2. Polar Area Chart  -->
+          <div class="stat stat-share">
+            <div class="chart-container-sm">
+              <canvas id="polarAreaChart"></canvas>
+            </div>
+          </div>
+
+          <!-- 3. Бар-чарт для тижневого споживання -->
+          <div class="stat stat-week">
+            <h3>Тижневе споживання електроенергії</h3>
+            <div class="chart-container-bars">
+              <canvas id="weeklyBarChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-right">
+          <!-- 4. Doughnut Chart для загального відсотка  -->
+        <div class="stat stat-percent">
+        <div class="chart-container-ring">
+        <canvas id="doughnutRingChart"></canvas>
+        <span class="ring-center-text">84%</span>
+        </div>
+        </div>
+
+          <div class="stat-actions">
+            <a href="#" class="btn-pdf">Завантажити в pdf</a>
+            <a href="#" class="btn-more">Детальніше</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+<section class="calendar-section">
+  <h2 class="section-title">Календар роботи комунальних служб та замовлених послуг</h2>
+  <div class="calendar-row">
+    
+    <!-- Календар -->
+    <div class="calendar">
+      <!-- Верхні крапки-індикатори днів тижня  -->
+      <div class="calendar-dots">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      
+      <h3>October</h3>
+      <p class="updated">останнє оновлення: 10.09 20:22</p>
+      
+      <div class="calendar-card-inner">
+        <div class="days">
+
+            <i class="day-red">1</i><i class="day-light">2</i><i class="day-yellow">3</i><i class="day-light">4</i><i class="day-light">5</i><i class="day-light">6</i><i class="day-green">7</i>
+          <i class="day-light">8</i><i class="day-light">9</i><i class="day-blue">10</i><i class="day-light">11</i><i class="day-pink">12</i><i class="day-light">13</i><i class="day-green">14</i>
+          <i class="day-light">15</i><i class="day-light">16</i><i class="day-blue">17</i><i class="day-light">18</i><i class="day-light">19</i><i class="day-light">20</i><i class="day-red">21</i>
+          <i class="day-light">22</i><i class="day-light">23</i><i class="day-light">24</i><i class="day-light">25</i><i class="day-blue">26</i><i class="day-light">27</i><i class="day-pink">28</i>
+          <i class="day-light">29</i><i class="day-green">30</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Замовлення та послуги -->
+    <div class="orders">
+      <h3 class="orders-month">October</h3>
+      
+      <h4>Ваші замовлення:</h4>
+      <ul>
+        <li><span class="square-icon red-bg"></span>Орендний договір</li>
+        <li><span class="square-icon yellow-bg"></span>Сервіс із ремонту ліфту</li>
+      </ul>
+      
+      <h4>Комунальні послуги:</h4>
+      <ul>
+        <li><span class="square-icon blue-bg"></span>Вивезення сміття</li>
+        <li><span class="square-icon green-bg"></span>Прибирання території комплексу</li>
+        <li><span class="square-icon pink-bg"></span>Планові перевірки комунакацій</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+  </main>
+
+  <footer class="feedback">
+    <div class="container">
+      <h2>Допоможіть стати нам ще краще!</h2>
+      <p>Заповнюйте форму задля покращення умов приживання для наших мешканців у житловому комплексі. Також будемо вдячні за ваш відгук!</p>
+      <div class="feedback-btns">
+        <a href="#" class="fb-btn fb-green">Заповнити форму</a>
+        <a href="#" class="fb-btn fb-yellow">Написати відгук</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Фонове листя -->
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-1">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-2">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-3">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-4">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-5">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-6">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-7">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-8">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-9">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-10">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-11">
+  <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-12">
+
+  <!-- Логіка діаграм -->
+  <script>
+    // 1. Лінійний графік споживання
+    new Chart(document.getElementById('lineConsumptionChart').getContext('2d'), {
+      type: 'line',
+      data: {
+        labels: ['Січ', 'Лют', 'Бер', 'Квіт', 'Трав', 'Черв'],
+        datasets: [{
+          data: [30, 15, 60, 45, 85, 70],
+          borderColor: '#32451D',
+          backgroundColor: 'rgba(50, 69, 29, 0.1)',
+          borderWidth: 3,
+          tension: 0.3,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { x: { display: false }, y: { display: true, color: 'rgba(0,0,0,0.8)' }, beginAtZero: true }
+      }
+      
+    });
+
+    // 2. Polar Area Chart (Світло 50%, Вода 30%, Газ 20%)
+    new Chart(document.getElementById('polarAreaChart').getContext('2d'), {
+      type: 'polarArea',
+      data: {
+        labels: ['Світло (50%)', 'Вода (30%)', 'Газ (20%)'],
+        datasets: [{
+          data: [50, 30, 20],
+          backgroundColor: [
+            'rgba(50, 69, 29, 0.85)',
+            'rgba(107, 142, 35, 0.85)',
+            'rgba(158, 174, 122, 0.85)'
+          ]
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } }
+        }
+      }
+    });
+
+    // 3. Bar Chart для тижневого споживання
+    new Chart(document.getElementById('weeklyBarChart').getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
+        datasets: [{
+          data: [12, 8, 18, 6, 11, 14, 19],
+          backgroundColor: ['#5E7F39', '#A1B775', '#32451D', '#A1B775', '#80B14A', '#5E7F39', '#32451D'],
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { display: false } },
+          y: { grid: { color: 'rgba(0,0,0,0.05)' }, beginAtZero: true }
+        }
+      }
+    });
+
+    // 4. Doughnut Chart для загального показника 84%
+    new Chart(document.getElementById('doughnutRingChart').getContext('2d'), {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: [84, 16],
+          backgroundColor: ['#6B8E23', '#32451D'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '75%',
+        plugins: { legend: { display: false } }
+      }
+    });
+  </script>
+</body>
+</html>

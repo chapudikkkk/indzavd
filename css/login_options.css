@@ -1,80 +1,111 @@
 @import url("login_page.css");
 
-/* Розміри картки */
-.modal-card-login {
-  max-width: var(--card-width-login);
-  min-height: var(--card-height-login); 
-  padding: 40px 50px;
+/* ---------- Кнопка "Назад" (така сама, як на email_page: 64×62, top 40, left 50) ---------- */
+.back-btn {
+  top: 40px;
+  left: 50px;
+  padding: 0;
+  display: block;
+  z-index: 10;
 }
 
-/* LOG IN  */
+.back-icon {
+  display: block;
+  width: 64px;
+  height: 62px;
+}
+
+/* ---------- Картка (655 × 627, як на email_page; контент від top 59) ---------- */
+.modal-card-login {
+  z-index: 1;
+  max-width: var(--card-width-login);
+  min-height: var(--card-height-login);
+  padding: 63px 40px 40px;
+  justify-content: flex-start;
+  border-radius: var(--card-radius);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Три крапки: дві темні, третя світла (як на email_page: top 31, right 47, gap 10) */
+.modal-card-login .card-dots {
+  top: 31px;
+  right: 47px;
+  gap: 10px;
+}
+
+/* ---------- Заголовок LOG IN (Figtree 700, 100px) ---------- */
 .login-title {
   color: var(--text-white);
   font-size: 100px;
   font-weight: 700;
   line-height: 100%;
-  letter-spacing: 0.005em; 
+  letter-spacing: 0.005em;
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 22px;
 }
 
-/* Підзаголовок  */
+/* ---------- Підзаголовок ---------- */
 .login-subtitle {
   color: var(--text-white);
-  font-size: 27.34px; 
+  font-size: 27.34px;
   font-weight: 400;
   line-height: 100%;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 44px;
 }
 
-/* Контейнер кнопок входу */
+/* Контейнер кнопок входу  */
 .login-options {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  gap: 15px;
+  gap: 0;
 }
 
-/* Зелена кнопка  */
+/* Зелена кнопка */
 .btn-full {
-  width: var(--btn-width-login); 
-  height: var(--btn-height-login); 
-  border-radius: var(--btn-radius-login); 
-  font-size: 25px; 
+  width: var(--btn-width-login);
+  height: var(--btn-height-login);
+  border-radius: var(--btn-radius-login);
+  font-size: 25px;
   font-weight: 500;
 }
 
-/* Розділювач або */
+/* або */
 .divider {
   color: var(--text-white);
-  font-size: 24px; 
+  font-size: 24px;
   font-weight: 400;
   line-height: 100%;
-  margin: 5px 0;
+  margin: 23px 0 40px;
 }
 
-
+/* Google / Дія  */
 .btn-social {
-  width: var(--btn-width-login); 
-  height: var(--btn-height-login); 
-  background: #FFFFFF; 
+  width: var(--btn-width-login);
+  height: var(--btn-height-login);
+  background: #FFFFFF;
   color: #000000;
-  border-radius: var(--btn-radius-login); 
-  font-size: 25px; 
+  border-radius: var(--btn-radius-login);
+  font-size: 25px;
   font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 13px;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
+.btn-social + .btn-social {
+  margin-top: 18px;
+}
+
 .social-icon {
-  width: 24px;
-  height: 24px;
-  object-fit: contain; 
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
 }
 
 .btn-social:hover {
@@ -90,4 +121,87 @@
   font-weight: 700;
   padding: 3px 6px;
   border-radius: 6px;
+}
+
+/* ---------- Tablet і менше ---------- */
+@media (max-width: 1023px) {
+  .back-btn {
+    top: 30px;
+    left: 30px;
+  }
+ 
+  .back-icon {
+    width: 52px;
+    height: 50px;
+  }
+}
+ 
+/* ---------- Mobile ---------- */
+@media (max-width: 767px) {
+  .back-btn {
+    top: 16px;
+    left: 16px;
+  }
+ 
+  .back-icon {
+    width: 40px;
+    height: 39px;
+  }
+ 
+  .page-container {
+    padding: 72px 16px 24px;
+  }
+ 
+  .modal-card-login {
+    min-height: auto;
+    padding: 56px 20px 32px;
+    border-radius: 32px;
+  }
+ 
+  .modal-card-login .card-dots {
+    top: 20px;
+    right: 24px;
+    gap: 8px;
+  }
+ 
+  .modal-card-login .card-dots span {
+    width: 14px;
+    height: 14px;
+  }
+ 
+  .login-title {
+    font-size: 56px;
+    line-height: 60px;
+    margin-bottom: 12px;
+  }
+ 
+  .login-subtitle {
+    font-size: 20px;
+    margin-bottom: 28px;
+  }
+ 
+  .login-options {
+    width: 100%;
+  }
+ 
+  .btn-full,
+  .btn-social {
+    width: 100%;
+    height: 56px;
+    font-size: 18px;
+  }
+ 
+  .divider {
+    font-size: 20px;
+    margin: 16px 0 20px;
+  }
+ 
+  .btn-social + .btn-social {
+    margin-top: 14px;
+  }
+ 
+  .social-icon {
+    width: 28px;
+    height: 28px;
+  }
 }
