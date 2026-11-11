@@ -19,6 +19,7 @@ body {
   margin: 0;
 }
 
+
 .container {
   width: 1280px;
   max-width: calc(100% - 40px);
@@ -53,31 +54,38 @@ a {
   height: 62px;
 }
 
+.back-btn:hover .back-icon {
+  filter: brightness(0.7);
+  transform: translateX(-2px);
+}
+
+
 /* Шапка */
 .hero {
   position: relative;
   padding-top: 43px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .hero-bg {
   position: absolute;
-  top: -2px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 467px;
+  height: 100%;
+  max-height: 467px;
   overflow: hidden;
   z-index: -1;
 }
 
 .hero-bg img {
-  position: absolute;
-  width: 1469px;
-  height: 1117px;
-  max-width: none;
-  left: 50%;
-  margin-left: -749px;
-  top: -398px;
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center;
+  position: relative;
+  top: -20px;
 }
 
 .hero-top {
@@ -172,16 +180,16 @@ a {
 
 .service-yellow {
   background: var(--grad-yellow);
-  width: 305px;
+  width: 350px;
 }
 
 .service-pink {
   background: var(--grad-pink);
-  width: 293px;
+  width: 300px;
 }
 
 .service-sm {
-  width: 304px;
+  width: 350px;
   font-size: 22px;
 }
 
@@ -325,9 +333,20 @@ main > section:first-child {
   color: #FFEBEB;
 }
 
+.btn-pdf:hover {
+  width: 285px;
+  background: #be3f43;
+  color: #FFEBEB;
+}
+
 .btn-more {
   width: 300px;
   background: #AFBF8D;
+  color: #F5FCE6;
+}
+.btn-more:hover {
+  width: 300px;
+  background: #9fc848;
   color: #F5FCE6;
 }
 
@@ -516,16 +535,24 @@ main > section:first-child {
   transition: transform 0.2s ease;
 }
 
-.fb-btn:hover {
-  transform: translateY(-2px);
-}
-
 .fb-green {
-  background: var(--btn-green-bg);
+  background: var(--btn-green-bg, #32451d); 
+  color: #ffffff;
 }
 
+.fb-green:hover {
+  filter: brightness(0.855); 
+}
+
+/* Жовта кнопка відгуку */
 .fb-yellow {
   background: rgba(251, 188, 5, 0.9);
+  color: #32451d;
+}
+
+.fb-yellow:hover {
+  filter: brightness(0.855); 
+  background: rgba(220, 160, 2, 0.95); 
 }
 
 /* Листя */
@@ -536,7 +563,7 @@ main > section:first-child {
   object-fit: contain;
   transform-origin: 0 0;
 }
-
+/* Листок 1 (ліворуч, під новинами) */
 .pl-1 {
   left: calc(50% - 574.99px);
   top: 1037.43px;
@@ -545,6 +572,7 @@ main > section:first-child {
   transform: rotate(92.874deg);
 }
 
+/* Листок 2 (праворуч, під новинами) */
 .pl-2 {
   left: calc(50% + 575.87px);
   top: 1270.49px;
@@ -553,46 +581,52 @@ main > section:first-child {
   transform: rotate(-93.298deg);
 }
 
+/* Листок 3 (праворуч, у верхній частині біля шапки) */
 .pl-3 {
   left: calc(50% + 561.17px);
-  top: 580px;
+  top: 510px;
   width: 129.44px;
   height: 130.74px;
   transform: rotate(14.695deg);
 }
 
+/* Листок 4 (середина, між календарем і статистикою) */
 .pl-4 {
   left: calc(50% + 169px);
-  top: 2020.38px;
+  top: 1950.38px;
   width: 57.7px;
   height: 58.28px;
   transform: rotate(-0.373deg);
 }
 
+/* Листок 5 (середина нижче, між календарем і статистикою) */
 .pl-5 {
   left: calc(50% - 214.62px);
-  top: 2300.31px;
+  top: 2240.31px;
   width: 57.7px;
   height: 58.28px;
   transform: rotate(-96.544deg);
 }
 
+/* Листок 6 (ліворуч, між календарем і статистикою) */
 .pl-6 {
   left: calc(50% - 675.24px);
-  top: 2090.05px;
+  top: 2040.05px;
   width: 142.67px;
   height: 144.1px;
   transform: rotate(-81.973deg);
 }
 
+/* Листок 7 (праворуч, між календарем і статистикою) */
 .pl-7 {
   left: calc(50% + 596.82px);
-  top: 2083.29px;
+  top: 2003.29px;
   width: 108px;
   height: 109.08px;
   transform: rotate(28.981deg);
 }
 
+/* Листок 8 (по центру, знизу) */
 .pl-8 {
   left: calc(50% - 57.97px);
   top: 3023.34px;
@@ -601,6 +635,7 @@ main > section:first-child {
   transform: rotate(-123.082deg);
 }
 
+/* Листок 9 (далеко ліворуч, знизу) */
 .pl-9 {
   left: calc(50% - 819px);
   top: 2857.66px;
@@ -609,6 +644,7 @@ main > section:first-child {
   transform: rotate(-18.97deg);
 }
 
+/* Листок 10 (праворуч, знизу) */
 .pl-10 {
   left: calc(50% + 692.2px);
   top: 2884px;
@@ -617,14 +653,16 @@ main > section:first-child {
   transform: rotate(21.604deg);
 }
 
+/* Листок 11 (зліва у верхній частині біля шапки) */
 .pl-11 {
   left: calc(50% - 248.42px);
-  top: 580.48px;
+  top: 496px;
   width: 70.48px;
   height: 71.19px;
   transform: rotate(10.554deg);
 }
 
+/* Листок 12 (у верхній частині) */
 .pl-12 {
   left: calc(50% + 9.86px);
   top: 1107.62px;
@@ -669,4 +707,18 @@ main > section:first-child {
   color: #32451d;
   letter-spacing: 0.005em;
   pointer-events: none;
+}
+.polar-full-block {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end; 
+  justify-content: center;
+  padding-top: 25px;     
+  box-sizing: border-box;
+}
+
+.polar-full-block canvas {
+  width: 100%;
+  height: 100%;
 }

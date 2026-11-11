@@ -29,7 +29,7 @@
 
       <h2 class="section-title title-services">Послуги</h2>
       <nav class="services">
-        <a href="payment.html" class="service service-yellow">Оплата комун послуг</a>
+        <a href="service_page.html" class="service service-yellow">Оплата комун послуг</a>
         <a href="#" class="service service-pink service-sm">Аналітика споживання</a>
         <a href="#" class="service service-yellow">Чат-бот підтримки</a>
         <a href="#" class="service service-pink">Більше послуг</a>
@@ -66,9 +66,9 @@
 
           <!-- 2. Polar Area Chart  -->
           <div class="stat stat-share">
-            <div class="chart-container-sm">
-              <canvas id="polarAreaChart"></canvas>
-            </div>
+          <div class="chart-container-sm polar-full-block">
+           <canvas id="polarAreaChart"></canvas>
+          </div>        
           </div>
 
           <!-- 3. Бар-чарт для тижневого споживання -->
@@ -198,26 +198,37 @@
 
     // 2. Polar Area Chart (Світло 50%, Вода 30%, Газ 20%)
     new Chart(document.getElementById('polarAreaChart').getContext('2d'), {
-      type: 'polarArea',
-      data: {
-        labels: ['Світло (50%)', 'Вода (30%)', 'Газ (20%)'],
-        datasets: [{
-          data: [50, 30, 20],
-          backgroundColor: [
-            'rgba(50, 69, 29, 0.85)',
-            'rgba(107, 142, 35, 0.85)',
-            'rgba(158, 174, 122, 0.85)'
-          ]
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } }
-        }
+  type: 'polarArea',
+  data: {
+    labels: ['Світло (50%)', 'Вода (30%)', 'Газ (20%)'],
+    datasets: [{
+      data: [50, 30, 20],
+      backgroundColor: [
+        'rgba(50, 69, 29, 0.85)',
+        'rgba(107, 142, 35, 0.85)',
+        'rgba(158, 174, 122, 0.85)'
+      ],
+      borderWidth: 0 
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      r: {
+        radius: '75%', 
+        ticks: { display: false },
+        grid: { color: 'rgba(0, 0, 0, 0.08)' }
       }
-    });
+    },
+    plugins: {
+      legend: { 
+        position: 'bottom', 
+        labels: { boxWidth: 12, font: { size: 11 }, padding: 15 } 
+      }
+    }
+  }
+});
 
     // 3. Bar Chart для тижневого споживання
     new Chart(document.getElementById('weeklyBarChart').getContext('2d'), {

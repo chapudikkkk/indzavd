@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
+
+.service-page,
+.service-page * {
+  box-sizing: border-box;
+}
+
+.service-page {
+  background: linear-gradient(117.23deg,rgba(28, 42, 11, 1) 0%,rgba(102, 147, 52, 1) 100%
+  );
+  min-height: 1024px;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  font-family: var(--font-family-main, 'Poppins', sans-serif);
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(
+    117.23deg,
+    rgba(28, 42, 11, 1) 0%,
+    rgba(102, 147, 52, 1) 100%
+  );
+}
+
+
+.service-card-bg {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 40px;
+  width: 1230px;
+  max-width: calc(100% - 40px);
+  height: 642px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 189px;
+}
+
+/* Заголовок */
+.service-title {
+  color: #ffffff;
+  text-align: left;
+  font-size: 40px;
+  font-weight: 700;
+  position: absolute;
+  left: 171px;
+  top: 252px;
+  margin: 0;
+}
+
+/* Кнопка закриття (хрестик) */
+.service-close-btn {
+  position: absolute;
+  right: 162px;
+  top: 229px;
+  width: 62px;
+  height: 58px;
+  background: #9eae7a; 
+  border: none;
+  border-radius: 14.39px; 
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease;
+}
+
+.service-close-btn .close-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.service-close-btn .close-icon::before,
+.service-close-btn .close-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 3.5px;
+  background-color: #ffffff; 
+  border-radius: 2px;
+}
+
+.service-close-btn .close-icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.service-close-btn .close-icon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.service-close-btn:hover {
+  background: #32451d; 
+}
+
+/* Вкладки послуг */
+.service-tabs {
+  position: absolute;
+  left: 180px;
+  top: 333px;
+  display: flex;
+  gap: 14px;
+}
+
+.service-tab {
+  width: 352px;
+  height: 91px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ховаємо стандартний радіо */
+.service-tab input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.service-tab .tab-bg {
+  background: #9eae7a;
+  border-radius: 18.19px;
+  position: absolute;
+  inset: 0;
+  transition: background-color 0.25s ease;
+}
+
+.service-tab span {
+  color: #32451d;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  position: relative;
+  z-index: 1;
+  transition: color 0.25s ease;
+}
+
+/* Активний стан при виборі інпуту */
+.service-tab input[type="radio"]:checked ~ .tab-bg {
+  background: #32451d;
+}
+
+.service-tab input[type="radio"]:checked ~ span {
+  color: #ffffff;
+}
+
+/* Спосіб оплати */
+.payment-methods {
+  position: absolute;
+  left: 180px;
+  top: 454px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.payment-label {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.method-btn {
+  width: 331px;
+  height: 75px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.method-btn input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.method-btn .method-bg {
+  background: #9eae7a;
+  border-radius: 14.39px;
+  position: absolute;
+  inset: 0;
+  transition: background-color 0.25s ease;
+}
+
+.method-btn span {
+  color: #32451d;
+  font-size: 28px;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  transition: color 0.25s ease;
+}
+
+.method-btn input[type="radio"]:checked ~ .method-bg {
+  background: #32451d;
+}
+
+.method-btn input[type="radio"]:checked ~ span {
+  color: #ffffff;
+}
+
+/* (Заборгованість та Сума до сплати */
+.payment-info-row {
+  position: absolute;
+  left: 166px;
+  top: 580px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.info-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.info-text {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+/* Контейнер для суми */
+.sum-box {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  width: 121px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Стилі для введення */
+.sum-input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  text-align: center;
+  color: #32451d;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: inherit;
+  outline: none;
+  padding: 0;
+}
+
+/* Коли поле активне  */
+.sum-input.editable:focus {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.sum-box:has(.sum-input.editable:focus) {
+  border-color: #32451d;
+}
+
+.sum-input::-webkit-outer-spin-button,
+.sum-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.currency {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+/* Кнопка Сплатити */
+.btn-pay-submit {
+  position: absolute;
+  left: 159px;
+  top: 724px;
+  width: 1166px;
+  max-width: calc(100% - 320px);
+  height: 81px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-pay-bg {
+  background: linear-gradient(
+    -87.91deg,
+    rgba(107, 142, 35, 1) 0%,
+    rgba(40, 58, 4, 1) 100%
+  );
+  border-radius: 20.86px;
+  position: absolute;
+  inset: 0;
+  transition: filter 0.2s ease;
+}
+
+.btn-pay-submit span {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.btn-pay-submit:hover .btn-pay-bg {
+  filter: brightness(1.1);
+}
+
+.btn-pay-submit:active {
+  transform: scale(0.99);
+}
+
+/* Рядок полів для Credit Card */
+.card-details-row {
+  position: absolute;
+  left: 166px;
+  top: 545px; 
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+/* Зсуваємо нижній рядок, коли з'являються поля картки */
+.service-page:has(#pay-card:checked) .card-details-row {
+  opacity: 1;
+  visibility: visible;
+}
+
+.service-page:has(#pay-card:checked) .payment-info-row {
+  top: 635px; 
+}
+
+.service-page:has(#pay-card:checked) .btn-pay-submit {
+  top: 725px; 
+}
+
+.sum-box.card-box {
+  width: 270px;
+}
+
+.sum-box.date-box {
+  width: 110px;
+}
+
+.sum-box.cvv-box {
+  width: 90px;
+}
+
+/* Декоративне листя */
+.bg-leaf {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  object-fit: contain;
+  transform-origin: 0 0;
+}
+
+.leaf-1 { left: 214.01px; top: 87.41px; width: 126.56px; height: 127.83px; transform: rotate(92.874deg); }
+.leaf-2 { left: 1383.38px; top: 127.47px; width: 39.19px; height: 39.58px; transform: rotate(174.035deg); }
+.leaf-3 { left: 101.09px; top: 566.36px; width: 39.19px; height: 39.58px; transform: rotate(174.035deg); }
+.leaf-4 { left: 1340.87px; top: 610.49px; width: 84.71px; height: 85.56px; transform: rotate(-93.298deg); }
+.leaf-5 { left: 733.96px; top: 70.97px; width: 129.44px; height: 130.74px; transform: rotate(14.695deg); }
+.leaf-6 { left: 46.62px; top: 915px; width: 108px; height: 109.08px; transform: rotate(48.441deg); }
+.leaf-7 { left: 692px; top: 778.7px; width: 108px; height: 109.08px; transform: rotate(-0.373deg); }
+.leaf-8 { left: 1336px; top: 1026.71px; width: 108px; height: 109.08px; transform: rotate(-71.994deg); }
