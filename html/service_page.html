@@ -3,118 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Оплата комунальних послуг</title>
+  <title>GRAND HOME - Оплата комунальних послуг</title>
   <link rel="stylesheet" href="../css/service_page.css">
 </head>
 <body>
 
   <div class="service-page">
+
     <!-- Декоративне листя -->
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-1">
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-2">
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-3">
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-4">
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-5">
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-6">
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-7">
-    <img src="../img/leaf.png" alt="" class="bg-leaf leaf-8">
+    <img src="../img/leaf.png" alt="" aria-hidden="true" class="bg-leaf leaf-1">
+    <img src="../img/leaf.png" alt="" aria-hidden="true" class="bg-leaf leaf-2">
+    <img src="../img/leaf.png" alt="" aria-hidden="true" class="bg-leaf leaf-3">
+    <img src="../img/leaf.png" alt="" aria-hidden="true" class="bg-leaf leaf-4">
+    <img src="../img/leaf.png" alt="" aria-hidden="true" class="bg-leaf leaf-5">
+    <img src="../img/leaf.png" alt="" aria-hidden="true" class="bg-leaf leaf-6">
+    <img src="../img/leaf.png" alt="" aria-hidden="true" class="bg-leaf leaf-7">
+    <img src="../img/leaf.png" alt="" aria-hidden="true" class="bg-leaf leaf-8">
 
-    <div class="service-card-bg"></div>
+    <div class="service-card">
 
-    <h2 class="service-title">Оплата комунальних послуг</h2>
+      <div class="service-card-bg"></div>
 
-    <!-- Кнопка закриття -->
-    <a href="resident_page.html" class="service-close-btn" aria-label="Закрити">
-      <span class="close-icon"></span>
-    </a>
+      <h1 class="service-title">Оплата комунальних послуг</h1>
 
-    <!-- Вибір послуги -->
-    <div class="service-tabs">
-      <label class="service-tab">
-        <input type="radio" name="service-type" checked>
-        <div class="tab-bg"></div>
-        <span>Електроенергія</span>
-      </label>
+      <a href="resident_page.html" class="service-close-btn" aria-label="Закрити">
+        <span class="close-icon"></span>
+      </a>
 
-      <label class="service-tab">
-        <input type="radio" name="service-type">
-        <div class="tab-bg"></div>
-        <span>Водопостачання</span>
-      </label>
+      <!-- Вкладки послуг -->
+      <div class="service-tabs">
+        <label class="service-tab">
+          <input type="radio" name="service" checked>
+          <div class="tab-bg"></div>
+          <span>Електроенергія</span>
+        </label>
+        <label class="service-tab">
+          <input type="radio" name="service">
+          <div class="tab-bg"></div>
+          <span>Водопостачання</span>
+        </label>
+        <label class="service-tab">
+          <input type="radio" name="service">
+          <div class="tab-bg"></div>
+          <span>Інтернет</span>
+        </label>
+      </div>
 
-      <label class="service-tab">
-        <input type="radio" name="service-type">
-        <div class="tab-bg"></div>
-        <span>Інтернет</span>
-      </label>
+      <!-- Спосіб оплати -->
+      <div class="payment-methods">
+        <span class="payment-label">Спосіб оплати:</span>
+        <label class="method-btn">
+          <input type="radio" name="payment" id="pay-paypal" checked>
+          <div class="method-bg"></div>
+          <span>PayPal</span>
+        </label>
+        <label class="method-btn">
+          <input type="radio" name="payment" id="pay-card">
+          <div class="method-bg"></div>
+          <span>Credit Card</span>
+        </label>
+      </div>
+
+      <!-- Дані картки (з'являються при виборі Credit Card) -->
+      <div class="card-details-row">
+        <div class="info-group card-number-group">
+          <span class="info-text">Номер картки:</span>
+          <div class="sum-box card-box"><input type="text" class="sum-input editable" inputmode="numeric" maxlength="19"></div>
+        </div>
+        <div class="info-group card-extra-group">
+          <span class="info-text">Термін дії:</span>
+          <div class="sum-box date-box"><input type="text" class="sum-input editable" inputmode="numeric" maxlength="5"></div>
+          <span class="info-text">CVV:</span>
+          <div class="sum-box cvv-box"><input type="password" class="sum-input editable" inputmode="numeric" maxlength="3"></div>
+        </div>
+      </div>
+
+      <!-- Заборгованість і сума -->
+      <div class="payment-info-row">
+        <div class="info-group">
+          <span class="info-text">Поточна заборгованість:</span>
+          <div class="sum-box"><input type="text" class="sum-input" value="100" readonly></div>
+          <span class="currency">грн</span>
+        </div>
+        <div class="info-group">
+          <span class="info-text">Введіть суму для сплати:</span>
+          <div class="sum-box"><input type="number" class="sum-input editable" value="50" min="1"></div>
+          <span class="currency">грн</span>
+        </div>
+      </div>
+
+      <a href="successful_page.html" class="btn-pay-submit">
+        <div class="btn-pay-bg"></div>
+        <span>Сплатити</span>
+      </a>
+
     </div>
-
-    <!-- Вибір способу оплати -->
-    <div class="payment-methods">
-      <span class="payment-label">Спосіб оплати:</span>
-      
-      <label class="method-btn">
-        <input type="radio" name="pay-method" id="pay-paypal" checked>
-        <div class="method-bg"></div>
-        <span>PayPal</span>
-      </label>
-
-      <label class="method-btn">
-        <input type="radio" name="pay-method" id="pay-card">
-        <div class="method-bg"></div>
-        <span>Credit Card</span>
-      </label>
-    </div>
-
-    <!-- Блок полів для Credit Card (з'являється, коли обрано Credit Card) -->
-    <div class="card-details-row">
-      <div class="info-group">
-        <span class="info-text">Номер картки:</span>
-        <div class="sum-box card-box">
-          <input type="text" class="sum-input" placeholder="0000 0000 0000 0000" maxlength="19" />
-        </div>
-      </div>
-
-      <div class="info-group">
-        <span class="info-text">Термін дії:</span>
-        <div class="sum-box date-box">
-          <input type="text" class="sum-input" placeholder="MM/YY" maxlength="5" />
-        </div>
-      </div>
-
-      <div class="info-group">
-        <span class="info-text">CVV:</span>
-        <div class="sum-box cvv-box">
-          <input type="password" class="sum-input" placeholder="•••" maxlength="3" />
-        </div>
-      </div>
-    </div>
-
-    <!-- Блок заборгованості та суми до сплати -->
-    <div class="payment-info-row">
-      <div class="info-group">
-        <span class="info-text">Поточна заборгованість:</span>
-        <div class="sum-box">
-          <input type="text" class="sum-input" value="100" readonly />
-        </div>
-        <span class="currency">грн</span>
-      </div>
-
-      <div class="info-group">
-        <span class="info-text">Введіть суму для сплати:</span>
-        <div class="sum-box">
-          <input type="number" class="sum-input editable" value="50" min="1" />
-        </div>
-        <span class="currency">грн</span>
-      </div>
-    </div>
-
-    <!-- Головна кнопка Сплатити -->
-    <a href="successful_page.html" class="btn-pay-submit">
-      <div class="btn-pay-bg"></div>
-      <span>Сплатити</span>
-    </a>
-
   </div>
 
 </body>

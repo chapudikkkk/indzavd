@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap");
 @import url("login_page.css");
 
-/* Кнопка "Назад"*/
+/* Кнопка "Назад" */
 .back-btn {
   top: 40px;
   left: 50px;
@@ -15,7 +16,7 @@
   height: 62px;
 }
 
-/* Картка*/
+/* Картка */
 .modal-card-login {
   z-index: 1;
   max-width: var(--card-width-login);
@@ -34,7 +35,7 @@
   gap: 10px;
 }
 
-/*  Заголовок  */
+/* Заголовок */
 .login-title {
   color: var(--text-white);
   font-size: 100px;
@@ -54,7 +55,7 @@
   margin-bottom: 44px;
 }
 
-/* Контейнер кнопок входу  */
+/* Контейнер кнопок входу */
 .login-options {
   display: flex;
   flex-direction: column;
@@ -68,8 +69,8 @@
   width: var(--btn-width-login);
   height: var(--btn-height-login);
   border-radius: var(--btn-radius-login);
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 400;
 }
 
 /* або */
@@ -81,15 +82,15 @@
   margin: 23px 0 40px;
 }
 
-/* Google / Дія  */
+/* Google / Дія */
 .btn-social {
   width: var(--btn-width-login);
   height: var(--btn-height-login);
   background: #FFFFFF;
   color: #000000;
   border-radius: var(--btn-radius-login);
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,6 +111,7 @@
 .btn-social:hover {
   background: var(--text-white);
   transform: translateY(-2px);
+
 }
 
 /* Іконка Дія */
@@ -122,3 +124,81 @@
   border-radius: 6px;
 }
 
+/* Tablet (768px – 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .modal-card-login {
+    max-width: calc(var(--card-width-login) * 0.85);
+    min-height: calc(var(--card-height-login) * 0.85);
+  }
+
+  .login-title {
+    font-size: calc(100px * 0.8) !important;
+  }
+
+  .login-subtitle {
+    font-size: calc(27.34px * 0.85) !important;
+    font-weight: 400 !important;
+  }
+
+  .btn-full, 
+  .btn-social {
+    width: calc(var(--btn-width-login) * 0.85) !important;
+    height: calc(var(--btn-height-login) * 0.85) !important;
+    font-size: calc(24px * 0.85) !important;
+    font-weight: 400 !important;
+  }
+}
+
+/* Mobile (до 767px) */
+@media (max-width: 767px) {
+  .modal-card-login {
+    width: 90%;
+    max-width: calc(var(--card-width-login) * 0.55);
+    min-height: auto;
+    padding: 35px 20px;
+    border-radius: 30px;
+  }
+
+  .login-title {
+    font-size: calc(100px * 0.48) !important;
+    margin-bottom: 15px;
+  }
+
+  .login-subtitle {
+    font-size: calc(27.34px * 0.6) !important;
+    font-weight: 400 !important;
+    margin-bottom: 25px;
+  }
+
+  /* Крапки */
+  .card-dots {
+    top: 20px !important;
+    right: 20px !important;
+    gap: 6px !important;
+  }
+
+  .card-dots span {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  /* Кнопки масштабуються через множення або стають на повну ширину */
+  .btn-full, 
+  .btn-social {
+    width: 100% !important;
+    max-width: calc(var(--btn-width-login) * 0.55) !important;
+    height: calc(var(--btn-height-login) * 0.75) !important;
+    font-size: calc(24px * 0.75) !important;
+    font-weight: 400 !important;
+  }
+
+  .divider {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    margin: 15px 0 20px;
+  }
+
+  .btn-social + .btn-social {
+    margin-top: 12px;
+  }
+}

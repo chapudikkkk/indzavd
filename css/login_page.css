@@ -2,16 +2,17 @@
 @import url("reset.css");
 
 body {
-  font-family: var(--font-family-main);
+  font-family: var(--font-family-main, 'Figtree', sans-serif);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   background-color: var(--bg-color); 
-  background: var(--bg-gradient);
+  background: linear-gradient(135deg, #1C2A0B 0%, #669334 100%);
   background-attachment: fixed;
   overflow-x: hidden;
+  margin: 0;
 }
 
 /* Кнопка назад */
@@ -45,31 +46,33 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 20px;
+  padding: 0;
 }
 
 /* Картка */
 .modal-card {
   position: relative;
-  width: 100%;
+  width: 904.37px;
   max-width: 904.37px;
-  min-height: 363px;
+  height: 363px;
   background: rgba(255, 255, 255, 0.30);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-radius: 50.93px;
-  padding: 80px 60px 50px 60px;
+  padding: 80.32px 57px 43.81px 57px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  align-items: center; /* Центрування внутрішніх елементів */
+  justify-content: space-between;
   box-sizing: border-box;
+  margin-top: 19px; 
 }
 
+/* Три крапки */
 .card-dots {
   position: absolute;
-  top: 35px;
-  right: 60px;
+  top: 44px;
+  right: 57px;
   display: flex;
   gap: 11.47px;
 }
@@ -77,33 +80,35 @@ body {
 .card-dots span {
   width: 19.82px;
   height: 19.82px;
-  background-color: var(--dot-inactive-bg, #9EAE7A);
-  border-radius: 50%;
+  background-color: #9EAE7A;
+  border-radius: 9999px;
   transition: background-color 0.3s ease;
 }
 
-.card-dots span.active {
-  background-color: var(--dot-active-bg, #32451D);
+.card-dots span.active,
+.card-dots span:first-child {
+  background-color: #32451D;
 }
 
+/* Заголовок  */
 .card-title {
   color: #FFFFFF;
   font-size: 42px;
   font-weight: 600;
-  line-height: 120%;
+  line-height: 1.2;
   letter-spacing: 0.21px;
-  text-align: center;
-  margin-bottom: 45px;
+  text-align: center; /* Повернено центрування */
+  margin: 0;
+  width: 100%;
   max-width: 790.67px;
 }
 
-/* Кнопки на сторінці */
 .buttons-wrapper {
   display: flex;
-  gap: 24px;
-  justify-content: center;
+  flex-direction: row;
+  gap: 68.69px;
+  justify-content: center; 
   align-items: center;
-  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -117,15 +122,21 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 20px;
+  text-decoration: none;
+  padding: 0 10px;
   box-sizing: border-box;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  transition: background-position 0.4s ease, transform 0.2s ease, opacity 0.2s ease;
   border: none;
   cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .btn:hover {
   transform: translateY(-2px);
+  background-position: 100% 0%;
   opacity: 0.95;
 }
 
@@ -139,3 +150,72 @@ body {
   background: linear-gradient(126deg, #800E12 0%, #BD6A6D 89%);
 }
 
+/* Tablet (768px – 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .modal-card {
+    width: 90%;
+    max-width: 760px;
+    height: auto;
+    padding: 60px 40px 40px;
+    margin-top: 0;
+  }
+  .card-title {
+    font-size: 34px;
+    margin-bottom: 35px;
+    text-align: center;
+  }
+  .buttons-wrapper {
+    gap: 24px;
+    justify-content: center;
+  }
+  .btn {
+    font-size: 20px;
+    height: 68px;
+  }
+  .btn-green {
+    width: 310px;
+  }
+  .btn-red {
+    width: 330px;
+  }
+}
+
+/* Mobile (до 767px) */
+@media (max-width: 767px) {
+  .modal-card {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    padding: 50px 20px 30px;
+    border-radius: 30px;
+    margin-top: 0;
+    align-items: center;
+  }
+  .card-title {
+    font-size: 24px;
+    line-height: 130%;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .buttons-wrapper {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .btn {
+    width: 100% !important;
+    height: 60px;
+    font-size: 18px;
+  }
+  .back-btn {
+    top: 20px;
+    left: 20px;
+  }
+  .back-icon {
+    width: 45px;
+    height: 44px;
+  }
+  .card-dots {
+    top: 20px;
+    right: 20px;
+  }
+}

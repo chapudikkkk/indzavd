@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@500&display=swap");
-@import url("login_options.css");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap");
 @import url("base.css");
+@import url("login_options.css");
 
 :root {
   --card-radius: 48.82px;
 }
 
-/* Кнопка назад  */
+/* Кнопка назад */
 .back-btn {
   top: 40px;
   left: 50px;
@@ -56,7 +56,7 @@
   margin-bottom: 62px;
 }
 
-/* Форма введення даних*/
+/* Форма введення даних */
 .login-form {
   width: 100%;
   display: flex;
@@ -142,8 +142,111 @@
   background-color: var(--btn-green-bg);
   background: linear-gradient(-87.91deg, rgba(107, 142, 35, 1) 0%, rgba(40, 58, 4, 1) 100%);
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 400;
   border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Tablet (768px – 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .modal-card-login {
+    max-width: calc(var(--card-width-login) * 0.85);
+    min-height: calc(var(--card-height-login) * 0.85);
+    padding: calc(63px * 0.8) calc(40px * 0.8);
+  }
+
+  .modal-card-login .login-title {
+    font-size: calc(100px * 0.8) !important;
+    margin-bottom: calc(62px * 0.75) !important;
+  }
+
+  .form-group,
+  .forgot-password-wrapper {
+    width: calc(var(--btn-width-login) * 0.85);
+  }
+
+  .form-input {
+    height: calc(var(--btn-height-login) * 0.85);
+    font-size: calc(20px * 0.9);
+  }
+
+  .login-form .btn-full {
+    width: calc(245px * 0.85);
+    height: calc(57px * 0.85);
+    font-size: calc(24px * 0.9);
+  }
+}
+
+/* Mobile (до 767px) */
+@media (max-width: 767px) {
+  .modal-card-login {
+    width: 90%;
+    max-width: calc(var(--card-width-login) * 0.55);
+    min-height: auto;
+    padding: 35px 20px;
+    border-radius: 30px;
+  }
+
+  .modal-card-login .login-title {
+    font-size: calc(100px * 0.48) !important;
+    line-height: 110% !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Зменшені крапки для мобільного */
+  .card-dots,
+  .modal-card-login .card-dots {
+    top: 20px !important;
+    right: 20px !important;
+    gap: 6px !important;
+  }
+
+  .card-dots span,
+  .modal-card-login .card-dots span {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .form-group,
+  .forgot-password-wrapper {
+    width: 100% !important;
+  }
+
+  .form-group + .form-group {
+    margin-top: 15px;
+  }
+
+  .form-label {
+    font-size: calc(20px * 0.75);
+    margin-bottom: 4px;
+  }
+
+  .form-input {
+    height: calc(var(--btn-height-login) * 0.65);
+    font-size: calc(20px * 0.8);
+    padding: 0 15px;
+    border-radius: 14px;
+  }
+
+  .forgot-password-wrapper {
+    margin-bottom: 25px;
+    margin-top: 6px;
+    justify-content: center;
+  }
+
+  .forgot-password {
+    font-size: calc(16px * 0.85);
+    margin-right: 0;
+  }
+
+  .login-form .btn-full {
+    width: 100% !important;
+    max-width: calc(245px * 0.8);
+    height: calc(57px * 0.75);
+    font-size: calc(24px * 0.75);
+    font-weight: 400 !important;
+  }
+}

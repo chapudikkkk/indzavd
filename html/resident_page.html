@@ -6,13 +6,12 @@
   <title>GRAND HOME - Кабінет мешканця</title>
   <link rel="stylesheet" href="../css/resident_page.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/calendar.js" defer></script>
+  <script src="../js/charts.js" defer></script>
 </head>
 <body>
 
   <header class="hero">
-    <a href="login_options.html" class="back-btn" aria-label="Назад">
-      <img src="../img/nazad.png" alt="Назад" class="back-icon">
-    </a>
     <div class="hero-bg"><img src="../img/flowers.png" alt=""></div>
     <div class="container">
       <div class="hero-top">
@@ -64,11 +63,11 @@
             </div>
           </div>
 
-          <!-- 2. Polar Area Chart  -->
+          <!-- 2. Polar Area Chart -->
           <div class="stat stat-share">
-          <div class="chart-container-sm polar-full-block">
-           <canvas id="polarAreaChart"></canvas>
-          </div>        
+            <div class="chart-container-sm polar-full-block">
+             <canvas id="polarAreaChart"></canvas>
+            </div>       
           </div>
 
           <!-- 3. Бар-чарт для тижневого споживання -->
@@ -81,13 +80,13 @@
         </div>
 
         <div class="stats-right">
-          <!-- 4. Doughnut Chart для загального відсотка  -->
-        <div class="stat stat-percent">
-        <div class="chart-container-ring">
-        <canvas id="doughnutRingChart"></canvas>
-        <span class="ring-center-text">84%</span>
-        </div>
-        </div>
+          <!-- 4. Doughnut Chart для загального відсотка -->
+          <div class="stat stat-percent">
+            <div class="chart-container-ring">
+              <canvas id="doughnutRingChart"></canvas>
+              <span class="ring-center-text">84%</span>
+            </div>
+          </div>
 
           <div class="stat-actions">
             <a href="#" class="btn-pdf">Завантажити в pdf</a>
@@ -98,50 +97,53 @@
       </div>
     </section>
 
+<!-- Календар та замовлення -->
 <section class="calendar-section">
-  <h2 class="section-title">Календар роботи комунальних служб та замовлених послуг</h2>
-  <div class="calendar-row">
-    
-    <!-- Календар -->
-    <div class="calendar">
-      <!-- Верхні крапки-індикатори днів тижня  -->
-      <div class="calendar-dots">
-        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-      </div>
+  <div class="container">
+    <h2 class="section-title">Календар роботи комунальних служб та замовлених послуг</h2>
+    <div class="calendar-row">
       
-      <h3>October</h3>
-      <p class="updated">останнє оновлення: 10.09 20:22</p>
-      
-      <div class="calendar-card-inner">
-        <div class="days">
-
-            <i class="day-red">1</i><i class="day-light">2</i><i class="day-yellow">3</i><i class="day-light">4</i><i class="day-light">5</i><i class="day-light">6</i><i class="day-green">7</i>
-          <i class="day-light">8</i><i class="day-light">9</i><i class="day-blue">10</i><i class="day-light">11</i><i class="day-pink">12</i><i class="day-light">13</i><i class="day-green">14</i>
-          <i class="day-light">15</i><i class="day-light">16</i><i class="day-blue">17</i><i class="day-light">18</i><i class="day-light">19</i><i class="day-light">20</i><i class="day-red">21</i>
-          <i class="day-light">22</i><i class="day-light">23</i><i class="day-light">24</i><i class="day-light">25</i><i class="day-blue">26</i><i class="day-light">27</i><i class="day-pink">28</i>
-          <i class="day-light">29</i><i class="day-green">30</i>
+      <!-- Календар -->
+      <div class="calendar">
+        <div class="calendar-dots">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        
+        <div class="calendar-header">
+          <button id="prev-btn" class="cal-nav-btn" aria-label="Попередній місяць">‹</button>
+          <h3 id="month-year">Листопад 2026</h3>
+          <button id="next-btn" class="cal-nav-btn" aria-label="Наступний місяць">›</button>
+        </div>
+        
+        <p class="updated" id="last-updated">останнє оновлення: 15.11 11:49</p>
+        
+        <div class="calendar-card-inner">
+          <div class="calendar-weekdays">
+            <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Нд</span>
+          </div>
+          <div class="days" id="calendar-days"></div>
         </div>
       </div>
-    </div>
 
-    <!-- Замовлення та послуги -->
-    <div class="orders">
-      <h3 class="orders-month">October</h3>
-      
-      <h4>Ваші замовлення:</h4>
-      <ul>
-        <li><span class="square-icon red-bg"></span>Орендний договір</li>
-        <li><span class="square-icon yellow-bg"></span>Сервіс із ремонту ліфту</li>
-      </ul>
-      
-      <h4>Комунальні послуги:</h4>
-      <ul>
-        <li><span class="square-icon blue-bg"></span>Вивезення сміття</li>
-        <li><span class="square-icon green-bg"></span>Прибирання території комплексу</li>
-        <li><span class="square-icon pink-bg"></span>Планові перевірки комунакацій</li>
-      </ul>
-    </div>
+      <!-- Замовлення з вертикальним скролом -->
+      <div class="orders">
+        <h3 class="orders-month">October</h3>
+        
+        <h4 style="margin-top: 0;">Ваші замовлення:</h4>
+        <ul>
+          <li><span class="square-icon red-bg"></span>Орендний договір</li>
+          <li><span class="square-icon yellow-bg"></span>Сервіс із ремонту ліфту</li>
+        </ul>
 
+        <h4 style="margin-top: 20px;">Комунальні послуги:</h4>
+        <ul>
+          <li><span class="square-icon blue-bg"></span>Вивезення сміття</li>
+          <li><span class="square-icon green-bg"></span>Прибирання території комплексу</li>
+          <li><span class="square-icon pink-bg"></span>Планові перевірки комунікацій</li>
+        </ul>
+      </div>
+
+    </div>
   </div>
 </section>
   </main>
@@ -171,104 +173,5 @@
   <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-11">
   <img src="../img/leaf.png" alt="" aria-hidden="true" class="page-leaf pl-12">
 
-  <!-- Логіка діаграм -->
-  <script>
-    // 1. Лінійний графік споживання
-    new Chart(document.getElementById('lineConsumptionChart').getContext('2d'), {
-      type: 'line',
-      data: {
-        labels: ['Січ', 'Лют', 'Бер', 'Квіт', 'Трав', 'Черв'],
-        datasets: [{
-          data: [30, 15, 60, 45, 85, 70],
-          borderColor: '#32451D',
-          backgroundColor: 'rgba(50, 69, 29, 0.1)',
-          borderWidth: 3,
-          tension: 0.3,
-          fill: true
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: { x: { display: false }, y: { display: true, color: 'rgba(0,0,0,0.8)' }, beginAtZero: true }
-      }
-      
-    });
-
-    // 2. Polar Area Chart (Світло 50%, Вода 30%, Газ 20%)
-    new Chart(document.getElementById('polarAreaChart').getContext('2d'), {
-  type: 'polarArea',
-  data: {
-    labels: ['Світло (50%)', 'Вода (30%)', 'Газ (20%)'],
-    datasets: [{
-      data: [50, 30, 20],
-      backgroundColor: [
-        'rgba(50, 69, 29, 0.85)',
-        'rgba(107, 142, 35, 0.85)',
-        'rgba(158, 174, 122, 0.85)'
-      ],
-      borderWidth: 0 
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      r: {
-        radius: '75%', 
-        ticks: { display: false },
-        grid: { color: 'rgba(0, 0, 0, 0.08)' }
-      }
-    },
-    plugins: {
-      legend: { 
-        position: 'bottom', 
-        labels: { boxWidth: 12, font: { size: 11 }, padding: 15 } 
-      }
-    }
-  }
-});
-
-    // 3. Bar Chart для тижневого споживання
-    new Chart(document.getElementById('weeklyBarChart').getContext('2d'), {
-      type: 'bar',
-      data: {
-        labels: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
-        datasets: [{
-          data: [12, 8, 18, 6, 11, 14, 19],
-          backgroundColor: ['#5E7F39', '#A1B775', '#32451D', '#A1B775', '#80B14A', '#5E7F39', '#32451D'],
-          borderRadius: 6
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-          x: { grid: { display: false } },
-          y: { grid: { color: 'rgba(0,0,0,0.05)' }, beginAtZero: true }
-        }
-      }
-    });
-
-    // 4. Doughnut Chart для загального показника 84%
-    new Chart(document.getElementById('doughnutRingChart').getContext('2d'), {
-      type: 'doughnut',
-      data: {
-        datasets: [{
-          data: [84, 16],
-          backgroundColor: ['#6B8E23', '#32451D'],
-          borderWidth: 0
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: '75%',
-        plugins: { legend: { display: false } }
-      }
-    });
-  </script>
 </body>
 </html>
