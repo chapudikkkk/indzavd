@@ -38,7 +38,7 @@ body {
 
 .back-btn:hover .back-icon {
   filter: brightness(0.7);
-  transform: translateX(-2px);
+  transform: scale(1.05);
 }
 
 .page-container {
@@ -62,7 +62,7 @@ body {
   padding: 80.32px 57px 43.81px 57px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Центрування внутрішніх елементів */
+  align-items: center; 
   justify-content: space-between;
   box-sizing: border-box;
   margin-top: 19px; 
@@ -135,7 +135,7 @@ body {
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: scale(1.05);
   background-position: 100% 0%;
   opacity: 0.95;
 }
