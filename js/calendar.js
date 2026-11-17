@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
       daysContainer.appendChild(emptyCell);
     }
 
-    // Приклад кольорів для днів (як на макеті)
     const sampleColors = {
       1: 'day-pink',
       3: 'day-yellow',

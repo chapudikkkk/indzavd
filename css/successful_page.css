@@ -72,7 +72,7 @@ body {
   position: absolute;
   left: 621.48px;
   top: -74px;
-  transform: rotate(19.302deg);
+  transform: rotate(5.302deg);
   object-fit: cover;
   pointer-events: none;
 }
@@ -364,7 +364,7 @@ body {
   }
 }
 
-/* Mobile (до 767px) — за макетом "Повідомлення про успішну оплату" */
+/* Mobile (до 767px)  */
 @media (max-width: 767px) {
   .service-page {
     padding: 16px;
